@@ -57,5 +57,19 @@ const refreshToken = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
-
-export const AuthController = { createUser, loginUser, refreshToken };
+// get user by email
+const getSingleUser = catchAsync(async (req: Request, res: Response) => {
+  const result = await AuthService.getSingleUserService(req.params?.id);
+  sendResponse<IUser>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Get Single user successfully.',
+    data: result,
+  });
+});
+export const AuthController = {
+  createUser,
+  loginUser,
+  refreshToken,
+  getSingleUser,
+};

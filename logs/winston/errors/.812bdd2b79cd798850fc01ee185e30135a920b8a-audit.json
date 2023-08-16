@@ -89,6 +89,11 @@
             "date": 1692202839594,
             "name": "D:\\Programming-Hero\\Next-Level-Course\\Mileston-4\\Module-23 Assignment-5\\book-catalog-server\\logs\\winston\\errors\\cos-2023-08-16-22-error.log",
             "hash": "1272a09d9a2c5a8fe8acbc50a192d5bd0fc95a0d1dab8face4d1254491c6ec7c"
+        },
+        {
+            "date": 1692206540248,
+            "name": "D:\\Programming-Hero\\Next-Level-Course\\Mileston-4\\Module-23 Assignment-5\\book-catalog-server\\logs\\winston\\errors\\cos-2023-08-16-23-error.log",
+            "hash": "e8e272479e580b00a19945900147afa14e299827245b66e99fd44d1049686b2c"
         }
     ],
     "hashType": "sha256"

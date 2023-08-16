@@ -85,9 +85,18 @@ const refreshTokenService = async (
     accessToken: newAccessToken,
   };
 };
-
+// Get single user by email
+const getSingleUserService = async (email: string): Promise<IUser | null> => {
+  const isExist = await User.findOne({ email }).exec();
+  if (!isExist) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'User not found!');
+  }
+  const result = await User.findOne({ email });
+  return result;
+};
 export const AuthService = {
   createUserService,
   loginUserService,
   refreshTokenService,
+  getSingleUserService,
 };
