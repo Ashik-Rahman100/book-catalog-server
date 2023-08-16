@@ -10,33 +10,39 @@ const userSchema = new Schema<IUser, UserModel>(
     email: { type: String, required: true, unique: true },
     role: { type: String },
     password: { type: String, required: true, select: 0 },
-    wishList: { type: Schema.Types.ObjectId, ref: 'Book' },
+    wishList: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Book',
+      },
+    ],
   },
-  { timestamps: true, toJSON: { virtuals: true }, versionKey: false },
+  { timestamps: true, toJSON: { virtuals: true }, versionKey: false }
 );
 // check user exist
 userSchema.statics.isUserExist = async function (
-  email: string,
+  email: string
 ): Promise<Pick<IUser, '_id' | 'email' | 'password' | 'role'> | null> {
   return await User.findOne(
     { email },
-    { _id: 1, email: 1, password: 1, role: 1 },
+    { _id: 1, email: 1, password: 1, role: 1 }
   );
 };
 // user match password
 userSchema.statics.isMatchedPassword = async function (
   givenPassword: string,
-  savedPassword,
+  savedPassword
 ): Promise<boolean> {
   return await bcrypt.compare(givenPassword, savedPassword);
 };
 // Hashed user password
 userSchema.pre('save', async function (next) {
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
   const user = this;
   // Hash password
   user.password = await bcrypt.hash(
     user.password,
-    Number(config.bcrypt_salt_rounds),
+    Number(config.bcrypt_salt_rounds)
   );
 
   next();

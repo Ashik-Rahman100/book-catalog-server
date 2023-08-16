@@ -94,6 +94,11 @@
             "date": 1692206540202,
             "name": "D:\\Programming-Hero\\Next-Level-Course\\Mileston-4\\Module-23 Assignment-5\\book-catalog-server\\logs\\winston\\successes\\cos-2023-08-16-23-success.log",
             "hash": "b782fddc2a4be146517cf6f01f439ababd0ecab428223bfaecb0d14dfa55db4c"
+        },
+        {
+            "date": 1692208840480,
+            "name": "D:\\Programming-Hero\\Next-Level-Course\\Mileston-4\\Module-23 Assignment-5\\book-catalog-server\\logs\\winston\\successes\\cos-2023-08-17-00-success.log",
+            "hash": "f7d3affcd10f0eaac451063f984d411b9e4918a4861bd17a2f36575d2ebd1502"
         }
     ],
     "hashType": "sha256"

@@ -3,6 +3,8 @@ import { Secret } from 'jsonwebtoken';
 import config from '../../../config';
 import ApiError from '../../../errors/ApiError';
 import { jwtHelpers } from '../../../helpers/jwtHelpers';
+import { IBook } from '../books/book.interface';
+import { Book } from '../books/book.model';
 import {
   ILoginUserResponse,
   IRefreshTokenResponse,
@@ -94,9 +96,59 @@ const getSingleUserService = async (email: string): Promise<IUser | null> => {
   const result = await User.findOne({ email });
   return result;
 };
+// Add To Wish List
+const addToWishListService = async (_id: string, book: IBook) => {
+  const bookId = book._id;
+  const isExist = await User.findById(_id).exec();
+  const isBookExist = await Book.findById(bookId).exec();
+  if (!isExist) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'User not found!');
+  }
+  if (!isBookExist) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Book not found!');
+  }
+
+  const result = await User.findByIdAndUpdate(
+    _id,
+    {
+      $push: { wishList: bookId },
+    },
+    { new: true }
+  );
+  return result;
+};
+const getWishListFromDB = async (_id: string) => {
+  const result = await User.findById(_id)
+    .select('wishList')
+    .populate('wishList')
+    .exec();
+  if (!result) {
+    // If the user is not found, return null
+    return null;
+  }
+
+  return result; // Return the entire IUser object instead of just the wishList
+};
+const removeFromWishListInDB = async (_id: string, bookId: string) => {
+  // console.log('bookid--------', bookId);
+  const result = await User.findOneAndUpdate(
+    { _id },
+    {
+      $pull: { wishList: bookId },
+    },
+    {
+      new: true,
+    }
+  ).exec();
+  // console.log("result----------", result);
+  return result;
+};
 export const AuthService = {
   createUserService,
   loginUserService,
   refreshTokenService,
   getSingleUserService,
+  addToWishListService,
+  getWishListFromDB,
+  removeFromWishListInDB,
 };

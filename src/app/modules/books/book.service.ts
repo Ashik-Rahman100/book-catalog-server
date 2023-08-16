@@ -25,7 +25,7 @@ const getSingleBookService = async (_id: string): Promise<IBook | null> => {
 // Get all Book Service
 const getAllBookService = async (
   filters: IBookFilters,
-  paginationOptions: IPaginationOptions,
+  paginationOptions: IPaginationOptions
 ): Promise<IGenericResponse<IBook[]>> => {
   // Extract searchTerm to implement search query
   const { searchTerm, ...filtersData } = filters;
@@ -79,7 +79,7 @@ const getAllBookService = async (
 // Get Single Book
 const updateBookService = async (
   _id: string,
-  payload: Partial<IBook>,
+  payload: Partial<IBook>
 ): Promise<IBook | null> => {
   const isExist = await Book.findById(_id).exec();
   if (!isExist) {
@@ -101,7 +101,7 @@ const deleteBookservice = async (_id: string): Promise<IBook | null> => {
 // creat book review
 const addReviewService = async (
   _id: string,
-  review: IReview,
+  review: IReview
 ): Promise<IBook | null> => {
   const isExist = await Book.findById(_id).exec();
   if (!isExist) {
@@ -112,10 +112,8 @@ const addReviewService = async (
     {
       $push: { reviews: review },
     },
-    { new: true },
-  )
-    .populate('reviews')
-    .exec();
+    { new: true }
+  ).exec();
   return result;
 };
 
