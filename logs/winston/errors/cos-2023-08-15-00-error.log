@@ -1,1 +1,2 @@
 Tue Aug 15 2023 0:8:58  [COS-Management] error: Failed to database connected MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+Tue Aug 15 2023 0:17:47  [COS-Management] error: Failed to database connected MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.

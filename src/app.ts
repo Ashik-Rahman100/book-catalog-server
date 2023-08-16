@@ -1,7 +1,7 @@
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express, { Application, NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
-
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import routes from './app/routes';
 
@@ -9,7 +9,7 @@ const app: Application = express();
 
 // cors setup
 app.use(cors());
-
+app.use(cookieParser());
 // body parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
