@@ -1,2 +1,0 @@
-Wed Aug 16 2023 0:20:20  [COS-Management] error: Failed to database connected Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.z8svvp5.mongodb.net
-Wed Aug 16 2023 0:25:23  [COS-Management] error: Failed to database connected Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.z8svvp5.mongodb.net

@@ -20,7 +20,7 @@ export type BookGenre =
 
 export type IReview = {
   rating: number;
-  reviewText: String;
+  reviewText: string;
   reviewer: mongoose.Schema.Types.ObjectId;
 };
 

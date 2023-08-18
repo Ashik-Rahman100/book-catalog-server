@@ -76,7 +76,7 @@ const addToWishList = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Get Single user successfully.',
+    message: 'Add wishList successfully.',
     data: result,
   });
 });
@@ -101,7 +101,7 @@ const getWishList = catchAsync(async (req: Request, res: Response) => {
       success: true,
       statusCode: httpStatus.OK,
       data: wishListData,
-      message: 'Successfully retrieved wishlist 😎',
+      message: 'Successfully retrieved wishlist ',
     });
   }
 });
@@ -115,7 +115,7 @@ const removeWishList = catchAsync(async (req: Request, res: Response) => {
     success: true,
     statusCode: httpStatus.OK,
     data: user,
-    message: 'successfully removed from wishlist 😎',
+    message: 'successfully removed from wishlist ',
   });
 });
 export const AuthController = {

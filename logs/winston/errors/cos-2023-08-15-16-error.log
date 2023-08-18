@@ -1,2 +1,0 @@
-Tue Aug 15 2023 16:48:32  [COS-Management] error: Failed to database connected Error: querySrv ETIMEOUT _mongodb._tcp.cluster0.z8svvp5.mongodb.net
-Tue Aug 15 2023 16:53:22  [COS-Management] error: Failed to database connected Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.z8svvp5.mongodb.net
