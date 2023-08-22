@@ -19,13 +19,13 @@ export type BookGenre =
   | 'Young Adult';
 
 export type IReview = {
-  rating: number;
+  rating?: number;
   reviewText: string;
   reviewer: mongoose.Schema.Types.ObjectId;
 };
 
 export type IBook = {
-  _id: mongoose.Schema.Types.ObjectId;
+  _id?: mongoose.Schema.Types.ObjectId;
   title: string;
   description?: string;
   image?: string;

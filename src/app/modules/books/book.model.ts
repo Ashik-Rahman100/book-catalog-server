@@ -29,7 +29,7 @@ const bookSchema = new Schema<IBook, BookModel>(
     publishedAt: { type: String, required: true },
     genre: { type: String, required: true },
   },
-  { timestamps: true, versionKey: false },
+  { timestamps: true, versionKey: false }
 );
 
 // Data --> check ?

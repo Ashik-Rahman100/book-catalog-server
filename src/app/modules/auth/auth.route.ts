@@ -23,6 +23,6 @@ router.post(
 router.get('/user/:id', AuthController.getSingleUser);
 router.patch('/add-to-wish/:id', AuthController.addToWishList);
 router.get('/wishList/:id', AuthController.getWishList);
-router.patch('/remove-wish/:id', AuthController.removeWishList);
+router.delete('/remove-wish/:id', AuthController.removeWishList);
 
 export const AuthRoutes = router;

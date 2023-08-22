@@ -131,15 +131,9 @@ const getWishListFromDB = async (_id: string) => {
 };
 const removeFromWishListInDB = async (_id: string, bookId: string) => {
   // console.log('bookid--------', bookId);
-  const result = await User.findOneAndUpdate(
-    { _id },
-    {
-      $pull: { wishList: bookId },
-    },
-    {
-      new: true,
-    }
-  ).exec();
+  const result = await User.findByIdAndUpdate(_id, {
+    $pop: { wishList: bookId },
+  }).exec();
   // console.log("result----------", result);
   return result;
 };

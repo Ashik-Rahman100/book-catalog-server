@@ -19,11 +19,11 @@ export const bookGenres: BookGenre[] = [
   'Young Adult',
 ];
 
-export const bookSearchableFields = ['author', 'genre', 'title', 'publisedAt'];
+export const bookSearchableFields = ['author', 'genre', 'title', 'publishedAt'];
 export const bookFilterableFields = [
   'searchTerm',
   'author',
   'genre',
   'title',
-  'publisedAt',
+  'publishedAt',
 ];
